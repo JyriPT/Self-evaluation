@@ -51,7 +51,27 @@ namespace Self_evaluation
                 //Tehtävä 3 valinta
                 else if (select == 3)
                 {
+                    Console.WriteLine("Please input a number:");
+                    string input = Console.ReadLine();
+                    int count = 0;
+                    int number;
 
+                    do
+                    {
+                        if (int.TryParse(input, out number) == true && number != -1)
+                        {
+                            count += number;
+                            input = Console.ReadLine();
+
+                        } else if (int.TryParse(input, out number) == false)
+                        {
+                            Console.WriteLine("Input must be a number.");
+                            input = Console.ReadLine();
+                        }
+
+                    } while (number != -1);
+
+                    Console.WriteLine("Lukujen summa on " + count + ".");
                 }
                 //Tehtävä 4 valinta
                 else if (select == 4)
