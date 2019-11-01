@@ -34,7 +34,19 @@ namespace Self_evaluation
                 //Tehtävä 2 valinta
                 else if (select == 2)
                 {
+                    int order = 0;
 
+                    Console.WriteLine("Please input a phrase:");
+                    string input = Console.ReadLine();
+
+                    Console.WriteLine("Output:");
+
+                    for (int i = input.Length; i > 0; i--)
+                    {
+                        Console.WriteLine(order + ". " + input);
+
+                        order++;
+                    }
                 }
                 //Tehtävä 3 valinta
                 else if (select == 3)
