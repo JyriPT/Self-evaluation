@@ -76,11 +76,57 @@ namespace Self_evaluation
                 //Tehtävä 4 valinta
                 else if (select == 4)
                 {
+                    int loop1 = 0;
+                    int loop2 = 0;
+                    decimal number1 = 0;
+
+                    do
+                    {
+                        Console.WriteLine("Please input first number:");
+                        string input1 = Console.ReadLine();
+
+                        if (decimal.TryParse(input1, out decimal holding1) == true)
+                        {
+                            number1 = holding1;
+                            loop1 = 1;
+                            
+                        } else
+                        {
+                            Console.WriteLine("Input must be a number.");
+                        }
+
+                    } while (loop1 == 0);
+
+                    do
+                    {
+                        Console.WriteLine("Please input second number");
+                        string input2 = Console.ReadLine();
+
+                        if (decimal.TryParse(input2, out decimal number2) == true)
+                        {
+                            decimal rounded1 = Math.Round(number1, 2);
+                            decimal rounded2 = Math.Round(number2, 2);
+
+                            Console.WriteLine(rounded1.ToString("F") + " + " + rounded2.ToString("F") + " = " + Math.Round(number1 + number2, 2).ToString("F") + "");
+                            Console.WriteLine(rounded1.ToString("F") + " - " + rounded2.ToString("F") + " = " + Math.Round(number1 - number2, 2).ToString("F") + "");
+                            Console.WriteLine(rounded1.ToString("F") + " x " + rounded2.ToString("F") + " = " + Math.Round(number1 * number2, 2).ToString("F") + "");
+                            Console.WriteLine(rounded1.ToString("F") + " / " + rounded2.ToString("F") + " = " + Math.Round(number1 / number2, 2).ToString("F") + "");
+
+                            loop2 = 1;
+
+                        } else
+                        {
+                            Console.WriteLine("Input must be a number.");
+                        }
+                    } while (loop2 == 0);
 
                 } else
                 { 
                     Console.WriteLine("Invalid selection, please reboot.");
                 }
+            } else
+            {
+                Console.WriteLine("Invalid selection, please reboot.");
             }
             
         }
