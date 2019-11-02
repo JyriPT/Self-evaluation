@@ -21,11 +21,13 @@ namespace Self_evaluation
                 //Tehtävä 1 valinta
                 if (select == 1)
                 {
+                    //Pyytä käyttäjältä tekstin toistettavaksi.
                     Console.WriteLine("Please input a phrase:");
                     string input = Console.ReadLine();
 
                     Console.WriteLine("Output:");
 
+                    //Toistaa.
                     for (int i = 0; i < 5; i++)
                     {
                         Console.WriteLine(i + ". " + input);
@@ -34,13 +36,16 @@ namespace Self_evaluation
                 //Tehtävä 2 valinta
                 else if (select == 2)
                 {
+                    //Erillinen arvo järjestysnumeron seurantaan.
                     int order = 0;
 
+                    //Pyytää käyttäjältä tekstin toistettavaksi.
                     Console.WriteLine("Please input a phrase:");
                     string input = Console.ReadLine();
 
                     Console.WriteLine("Output:");
 
+                    //Tarkistaa annetun tekstin pituuden, toistaa.
                     for (int i = input.Length; i > 0; i--)
                     {
                         Console.WriteLine(order + ". " + input);
@@ -51,13 +56,16 @@ namespace Self_evaluation
                 //Tehtävä 3 valinta
                 else if (select == 3)
                 {
+                    //Pyytää käyttäjältä numeron.
                     Console.WriteLine("Please input a number:");
                     string input = Console.ReadLine();
                     int count = 0;
                     int number;
 
+                    //Do-toistorakenne päätty, kun annettu lukuarvo -1.
                     do
                     {
+                        //if-rakenne varmistaa, että annettu arvo on numero.
                         if (int.TryParse(input, out number) == true && number != -1)
                         {
                             count += number;
@@ -71,6 +79,7 @@ namespace Self_evaluation
 
                     } while (number != -1);
 
+                    //Tulostaa kaikkien lukujen summan.
                     Console.WriteLine("Lukujen summa on " + count + ".");
                 }
                 //Tehtävä 4 valinta
@@ -80,11 +89,13 @@ namespace Self_evaluation
                     int loop2 = 0;
                     decimal number1 = 0;
 
+                    //Do rakenne pyytää käyttäjältä luvun, päästä eteenpäin vasta kun käyttäjän antaa lukuarvon.
                     do
                     {
                         Console.WriteLine("Please input first number:");
                         string input1 = Console.ReadLine();
 
+                        //Varmistetaan, että annettu arvo on luku. Jos ei, heittää errorin ja pyytää uudelleen.
                         if (decimal.TryParse(input1, out decimal holding1) == true)
                         {
                             number1 = holding1;
@@ -97,11 +108,13 @@ namespace Self_evaluation
 
                     } while (loop1 == 0);
 
+                    //Toinen looppi pyytää toisen numeron, pyytää kunnes annettu arvo on luku.
                     do
                     {
                         Console.WriteLine("Please input second number");
                         string input2 = Console.ReadLine();
 
+                        //Tehdään kaikki laskut kun on saatu toinen numero.
                         if (decimal.TryParse(input2, out decimal number2) == true)
                         {
                             decimal rounded1 = Math.Round(number1, 2);
